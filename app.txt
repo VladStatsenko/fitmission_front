@@ -1,0 +1,94 @@
+import { useState, useEffect } from 'react'
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import Form from './Form'
+import ProgressBar from './ProgressBar.jsx'
+import Payment from './Payment.jsx'
+
+function App() {
+
+  const [loadingState, setLoadingState] = useState('form') // CHANGE AFTER
+
+
+  const [form, setForm] = useState({
+    gender: '',
+    meat: '',
+    milk: '',
+    activityLevel: '',
+    age: {value: '', validity: false},
+    height: {value: '', validity: false},
+    weight: {value: '', validity: false},
+    target: {value: '', validity: false},
+    email: {value: '', validity: false}
+  })
+
+  function sendData() {
+    console.log(JSON.stringify(form, null, 2))
+  }
+
+  return (
+    <>
+      <div className='p-6 mt-[76px]'>
+        <div className='flex flex-col gap-4'>
+
+          <div className='py-6 max-w-3xl text-center m-auto max-sm:text-left text-2xl'>
+            <h2>Индивидуальные планы питания, чтобы похудеть <span className='text-3xl font-bold text-emerald-500'>БЫСТРО</span>.</h2>
+            <h2>Ешьте хорошо, выглядите <span className='text-3xl font-bold text-emerald-500'>ПОТРЯСАЮЩЕ</span>!</h2>
+          </div>
+          {
+            loadingState == 'form' && 
+            <Form
+              form={form}
+              changeLoadingState={() => {
+                setLoadingState('loading')
+                window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+              }}
+              handleChangeForm={(e) => {
+                let value = e.target.value
+                e.target.name == 'gender' ? setForm({...form, gender: value}) :
+                e.target.name == 'meat' ? setForm({...form, meat: value}) :
+                e.target.name == 'milk' ? setForm({...form, milk: value}) :
+                e.target.name == 'activityLevel' ? setForm({...form, activityLevel: value}) : ''
+              }}
+              handleChangeData={(e) => {
+                let value = e.target.value
+                let validity = e.target.checkValidity()
+                e.target.id == 'age' ? setForm({...form, age: {value: value, validity: validity}}) :
+                e.target.id == 'height' ? setForm({...form, height: {value: value, validity: validity}}) :
+                e.target.id == 'weight' ? setForm({...form, weight: {value: value, validity: validity}}) :
+                e.target.id == 'target' ? setForm({...form, target: {value: value, validity: validity}}) : ''
+              }}
+              values={Object.values(form)}
+              />
+            }
+          {
+            loadingState == 'loading' &&
+            <ProgressBar
+            changeLoadingState={() => {
+              setLoadingState('loaded')
+              window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+            }}
+            />
+          }
+          {
+            loadingState == 'loaded' &&
+            <Payment
+              sendData={sendData}
+              form={form}
+              handleChange={(e) => {
+                let value = e.target.value
+                let validity = e.target.checkValidity()
+                e.target.id == 'email' ? setForm({...form, email: {value: value, validity: validity}}) : ''
+              }}
+              values={Object.values(form)}
+            />
+          }
+
+        </div>
+
+
+      </div>
+    </>
+  )
+}
+
+export default App
