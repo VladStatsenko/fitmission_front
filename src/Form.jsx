@@ -1,7 +1,8 @@
-import { useState } from "react"
-import { Link } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 function Form(props) {
+    
+    const navigate = useNavigate()
 
     let isFormCorrect = !props.values.slice(0,4).includes('') && props.values.slice(4,8).every(el => el.validity)
 
@@ -118,12 +119,12 @@ function Form(props) {
 
 
             {isFormCorrect
-                ? <Link className="text-white hover:text-white" to='/loading'>
+                ? <a className="text-white hover:text-white cursor-pointer" onClick={() => navigate('/loading') & window.scrollTo(0, 0)}>
                     <button
                         className={`mt-4 bg-zinc-900 px-4 py-2 w-full rounded-md sm:max-2xl:ring-1 sm:max-2xl:ring-emerald-500 sm:max-2xl:hover:ring-2 sm:max-2xl:hover:ring-emerald-500 max-sm:bg-emerald-500 cursor-pointer ${isFormCorrect ? '' : 'hover:cursor-not-allowed max-sm:opacity-50'}`}
                         >Составить план питания
                     </button>
-                </Link>
+                </a>
                 : <button onClick={() => alert('Заполните форму')} className='mt-4 bg-zinc-900 px-4 py-2 w-full rounded-md max-sm:bg-emerald-500 cursor-not-allowed max-sm:opacity-50'>Составить план питания</button>
             }
         </div>

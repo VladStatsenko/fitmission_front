@@ -6,6 +6,7 @@ import App from './App.jsx'
 import Footer from './Footer.jsx'
 
 import './index.css'
+import '@fontsource-variable/montserrat';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <>

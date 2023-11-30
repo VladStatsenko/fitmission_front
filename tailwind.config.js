@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      maxWidth: {
+        '7xl': '1240px',
+      },
       keyframes: {
         progress: {
           '0%' : {transform: 'scale(0, 1)'},
@@ -13,10 +16,12 @@ export default {
         },
       },
       backgroundImage: {
-        'pattern': "url('/bg-pattern.jpg')"
+        'pattern': "url('/bg-pattern.jpg')",
+        'new': "url('/bg-new.jpg')",
+        'new-mobile': "url('/bg-new-mobile.jpg')",
       }
     },
   },
-  plugins: [],
+  plugins: [require('tailwindcss-gradient')],
 }
 

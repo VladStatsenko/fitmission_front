@@ -19,12 +19,12 @@ function ProgressBar(props) {
     }, [])
     
     useEffect(() => {
-        count == 100 ? navigate('/payment') : ''
+        count == 100 ? navigate('/payment') & window.scrollTo(0, 0) : ''
     }, [count])
 
 
     return (
-        <div className="max-w-3xl w-full m-auto p-6 text-center flex flex-col gap-4">
+        <div className="max-w-3xl w-full m-auto p-12 text-center flex flex-col gap-4">
             <h2 className="text-4xl font-bold">Создание вашего плана</h2>
             <p className="leading-8 text-xl">Хорошо питайтесь, развлекайтесь, выглядите потрясающе</p>
             <div className="p-1 h-10 ring-2 ring-emerald-500 rounded-md relative">

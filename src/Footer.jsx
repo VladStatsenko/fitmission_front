@@ -5,34 +5,27 @@ function Footer() {
     const navigate = useNavigate()
 
   return (
-    <>
-        <div className='max-w-3xl w-full m-auto p-6 bg-zinc-900 rounded-xl text-zinc-400'>
-            <div className='text-xs leading-5 flex justify-between max-sm:flex-col max-sm:gap-6'>
-                <div className='flex flex-col gap-2 whitespace-nowrap justify-between'>
-                    <div>
-                        <p>ИП: Стаценко В.А.</p>
-                        <p>ИНН: 682907120244</p>
-                        <p>ОГРНИП: 323680000029697</p>
-                    </div>
-                    <div>
-                        <p>help.fitmission@gmail.com</p>
-                    </div>
-                </div>
-                <fr className='bg-zinc-700 h-0.5 rounded'></fr>
-                <div className='max-sm:order-last w-full text-center sm:max-2xl:flex sm:max-2xl:flex-col sm:max-2xl:justify-end'>
-                    <img className='m-auto mb-2 sm:max-2xl:my-auto w-14' alt='FitMission' src='fm.svg' />
-                    {/* <h2>fitmission</h2> */}
-                    <p>2023 Copyright</p>
-                </div>
-                <div className='flex flex-col gap-2 whitespace-nowrap'>
-                    <a href='assets/docs/oferta.pdf' download>Оферта</a>
-                    <a href='assets/docs/policy.pdf' download>Политика конфиденциальности</a>
-                    <a onClick={() => navigate('/subscription-cancellation')} className='cursor-pointer' target='_blank'>Отменить подписку</a>
-                    <a href='assets/docs/tariff.pdf' download>Тарифы</a>
-                </div>
+    <footer className='w-full from-[#070707]/0 to-[#070707] bg-gradient-[137deg] py-[66px] justify-center px-0 lg:px-8 xl:px-0 mt-[200px]'>
+        <div className='justify-between flex xl:flex-row flex-col gap-y-[100px] px-8 lg:px-0 m-auto max-w-7xl items-start'>
+            <img src="./fm-full-2.png" className='w-[138px] h-[43px]' />
+            <div className='gap-y-5 flex flex-col'>
+                <p className='text-white/80 text-[20px] leading-[24px]'>Сервис</p>
+                <a onClick={() => navigate('/subscription-cancellation') & window.scrollTo(0, 0)} target='_blank' className='font-semibold text-[20px] leading-[24px] cursor-pointer'>Отменить подписку</a>
+                <a href={"docs/tariff.pdf"} className='font-semibold text-[20px] leading-[24px]'>Тарифы</a>
+            </div>
+            <div className='gap-y-5 flex flex-col'>
+                <p className='text-white/80 text-[20px] leading-[24px]'>Документы</p>
+                <a href={"docs/oferta.pdf"} className='font-semibold text-[20px] leading-[24px]'>Договор оферты</a>
+                <a href={"docs/policy.pdf"} className='font-semibold text-[20px] leading-[24px]'>Политика конфиденциальности</a>
+            </div>
+            <div className='gap-y-5 flex flex-col'>
+                <p className='text-white/80 text-[20px] leading-[24px]'>ИП: Стаценко В.А.</p>
+                <p className='text-white/80 text-[20px] leading-[24px]'>ИНН: 682907120244</p>
+                <p className='text-white/80 text-[20px] leading-[24px]'>ОГРНИП: 323680000029697</p>
+                <p className='text-white/80 text-[20px] leading-[24px]'>help.fitmission@gmail.com</p>
             </div>
         </div>
-    </>
+    </footer>
   )
 }
 

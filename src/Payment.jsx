@@ -94,7 +94,7 @@ function Payment(props) {
                                 value={0}
                                 checked={checked.first}
                                 onChange={(e) => setChecked(el => ({...el, first: !el.first}))}
-                            /> Соглашаюсь с условиями оферты рекуррентных платежей
+                            /> Соглашаюсь с условиями оферты рекуррентных платежей(Первые 3 дня 49 руб. Далее 990 рублей/неделя)
                         </label>
                         <label className='cursor-pointer'>
                             <input
