@@ -114,7 +114,7 @@ function Start() {
                         </div>
                         <div className="flex flex-col gap-y-2.5 max-w-[314px] text-center items-center justify-center bottom-0 right-0 lg:absolute">
                             <img src="./icons/icon_4.png" />
-                            <h2 className="font-bold text-white/80 text-[25px] leading-[30px]">Держи свой рассудок под конролем</h2>
+                            <h2 className="font-bold text-white/80 text-[25px] leading-[30px]">Держи свой рассудок под контролем</h2>
                             <p className="font-medium text-white/80 text-[25px] leading-[30px]">Наши полезные лайфхаки помогут вашей психике легко перестроиться</p>
                         </div>
                 </div>

@@ -25,6 +25,8 @@ function App() {
     vegetarian: null,
     milk: null,
     activity: null,
+    goals: null,
+    reason: null,
     age: {value: '', validity: false},
     height: {value: '', validity: false},
     weight: {value: '', validity: false},
@@ -92,6 +94,8 @@ function App() {
                         e.target.name == 'vegetarian' ? setForm({...form, vegetarian: Number(value)}) :
                         e.target.name == 'milk' ? setForm({...form, milk: Number(value)}) :
                         e.target.name == 'activity' ? setForm({...form, activity: Number(value)}) : ''
+                        e.target.name == 'goals' ? setForm({...form, goals: Number(value)}) : ''
+                        e.target.name == 'reason' ? setForm({...form, reason: Number(value)}) : ''
                       }}
                       handleChangeData={(e) => {
                         let value = e.target.value

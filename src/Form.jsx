@@ -4,14 +4,14 @@ function Form(props) {
     
     const navigate = useNavigate()
 
-    let isFormCorrect = !props.values.slice(0,4).includes('') && props.values.slice(4,8).every(el => el.validity)
+    let isFormCorrect = !props.values.slice(0,6).includes('') && props.values.slice(6,10).every(el => el.validity)
 
     console.log(props.form)
 
     return (    
         <div className="max-w-3xl w-full m-auto flex flex-col gap-4">
             <div>
-                <h3 className='text-md mb-1'>Выберите пол 🙇‍♂️ 💁‍♀️</h3>
+                <h3 className='text-md mb-1'>Выберите пол ️</h3>
                 <div className="flex gap-2" onChange={props.handleChangeForm}>
                     <label className={`px-4 py-2 bg-zinc-900 rounded-md hover:cursor-pointer hover:ring-1 hover:ring-emerald-500 ${props.form.sex == 1 ? 'ring-1 ring-emerald-500' : ''}`}>
                         <input type='radio' value={1} name='sex' className="hidden" /> Мужчина
@@ -23,7 +23,7 @@ function Form(props) {
             </div>
 
             <div>
-                <h3 className='text-md mb-1'>Едите ли вы мясо? 🥩</h3>
+                <h3 className='text-md mb-1'>Едите ли вы мясо? </h3>
                 <div className='flex gap-2' onChange={props.handleChangeForm}>
                     <label className={`px-4 py-2 bg-zinc-900 rounded-md hover:cursor-pointer hover:ring-1 hover:ring-emerald-500 ${props.form.vegetarian == 1 ? 'ring-1 ring-emerald-500' : ''}`}>
                         <input type='radio' value={1} name='vegetarian' className="hidden" /> Да
@@ -35,7 +35,7 @@ function Form(props) {
             </div>
 
             <div>
-                <h3 className='text-md mb-1'>Ваше отношение к молочным продуктам 🍼</h3>
+                <h3 className='text-md mb-1'>Ваше отношение к молочным продуктам </h3>
                 <div className='flex gap-2' onChange={props.handleChangeForm}>
                     <label className={`px-4 py-2 bg-zinc-900 rounded-md hover:cursor-pointer hover:ring-1 hover:ring-emerald-500 ${props.form.milk == 1 ? 'ring-1 ring-emerald-500' : ''}`}>
                         <input type='radio' value={1} name='milk' className="hidden" /> Употребляю в пищу
@@ -47,28 +47,62 @@ function Form(props) {
             </div>
 
             <div>
-                <h3 className='text-md mb-1'>Выберите уровень Вашей активности 🏅</h3>
+                <h3 className='text-md mb-1'>Выберите уровень Вашей активности </h3>
                 <div className='flex max-sm:flex-col gap-2' onChange={props.handleChangeForm}>
                     <label className={`px-4 py-2 bg-zinc-900 rounded-md hover:cursor-pointer hover:ring-1 hover:ring-emerald-500 ${props.form.activity == 1 ? 'ring-1 ring-emerald-500' : ''}`}>
-                        <input type='radio' value={1} name='activity' className="hidden" /> Сижу дома
+                        <input type='radio' value={1} name='activity' className="hidden" /> Отсутствие нагрузки
                     </label>
                     <label className={`px-4 py-2 bg-zinc-900 rounded-md hover:cursor-pointer hover:ring-1 hover:ring-emerald-500 ${props.form.activity == 2 ? 'ring-1 ring-emerald-500' : ''}`}>
-                        <input type='radio' value={2} name='activity' className="hidden" /> Часто хожу гулять
+                        <input type='radio' value={2} name='activity' className="hidden" /> Низкий уровень активности
                     </label>
                     <label className={`px-4 py-2 bg-zinc-900 rounded-md hover:cursor-pointer hover:ring-1 hover:ring-emerald-500 ${props.form.activity == 3 ? 'ring-1 ring-emerald-500' : ''}`}>
-                        <input type='radio' value={3} name='activity' className="hidden" /> Занимаюсь в зале 1-2 раза в неделю
+                        <input type='radio' value={3} name='activity' className="hidden" /> Умеренный уровень активности
                     </label>
                     <label className={`px-4 py-2 bg-zinc-900 rounded-md hover:cursor-pointer hover:ring-1 hover:ring-emerald-500 ${props.form.activity == 4 ? 'ring-1 ring-emerald-500' : ''}`}>
-                        <input type='radio' value={4} name='activity' className="hidden" /> Занимаюсь в зале 3-4 раза в неделю
+                        <input type='radio' value={4} name='activity' className="hidden" /> Средний уровень активности
                     </label>
                     <label className={`px-4 py-2 bg-zinc-900 rounded-md hover:cursor-pointer hover:ring-1 hover:ring-emerald-500 ${props.form.activity == 5 ? 'ring-1 ring-emerald-500' : ''}`}>
-                        <input type='radio' value={5} name='activity' className="hidden" /> Занимаюсь в зале 5+ раз в неделю
+                        <input type='radio' value={5} name='activity' className="hidden" /> Высокий уровень активности
+                    </label>
+                </div>
+           </div>
+           <div>
+                <h3 className='text-md mb-1'>На какой области вы хотите сосредоточиться в своем плане?</h3>
+                <div className='flex max-sm:flex-col gap-2' onChange={props.handleChangeForm}>
+                    <label className={`px-4 py-2 bg-zinc-900 rounded-md hover:cursor-pointer hover:ring-1 hover:ring-emerald-500 ${props.form.goals == 1 ? 'ring-1 ring-emerald-500' : ''}`}>
+                         <input type='radio' value={1} name='goals' className="hidden" /> Питание
+                    </label>
+                    <label className={`px-4 py-2 bg-zinc-900 rounded-md hover:cursor-pointer hover:ring-1 hover:ring-emerald-500 ${props.form.goals == 2 ? 'ring-1 ring-emerald-500' : ''}`}>
+                          <input type='radio' value={2} name='goals' className="hidden" /> Физическая активность
+                    </label>
+                    <label className={`px-4 py-2 bg-zinc-900 rounded-md hover:cursor-pointer hover:ring-1 hover:ring-emerald-500 ${props.form.goals == 3 ? 'ring-1 ring-emerald-500' : ''}`}>
+                          <input type='radio' value={3} name='goals' className="hidden" /> Формирование полезных привычек
+                    </label>
+                    <label className={`px-4 py-2 bg-zinc-900 rounded-md hover:cursor-pointer hover:ring-1 hover:ring-emerald-500 ${props.form.goals == 4 ? 'ring-1 ring-emerald-500' : ''}`}>
+                          <input type='radio' value={4} name='goals' className="hidden" /> Другое
+                    </label>
+                </div>
+            </div>
+               <div>
+                <h3 className='text-md mb-1'>Какова Ваша основная причина желания похудеть? (Выберите самое важное)</h3>
+                <div className='flex max-sm:flex-col gap-2' onChange={props.handleChangeForm}>
+                    <label className={`px-4 py-2 bg-zinc-900 rounded-md hover:cursor-pointer hover:ring-1 hover:ring-emerald-500 ${props.form.reason == 1 ? 'ring-1 ring-emerald-500' : ''}`}>
+                         <input type='radio' value={1} name='reason' className="hidden" /> Улучшить свой внешний вид
+                    </label>
+                    <label className={`px-4 py-2 bg-zinc-900 rounded-md hover:cursor-pointer hover:ring-1 hover:ring-emerald-500 ${props.form.reason == 2 ? 'ring-1 ring-emerald-500' : ''}`}>
+                          <input type='radio' value={2} name='reason' className="hidden" /> Улучшить свое здоровье
+                    </label>
+                    <label className={`px-4 py-2 bg-zinc-900 rounded-md hover:cursor-pointer hover:ring-1 hover:ring-emerald-500 ${props.form.reason == 3 ? 'ring-1 ring-emerald-500' : ''}`}>
+                          <input type='radio' value={3} name='reason' className="hidden" /> Становиться лучше изо дня в день
+                    </label>
+                    <label className={`px-4 py-2 bg-zinc-900 rounded-md hover:cursor-pointer hover:ring-1 hover:ring-emerald-500 ${props.form.reason == 4 ? 'ring-1 ring-emerald-500' : ''}`}>
+                          <input type='radio' value={4} name='reason' className="hidden" /> Другое
                     </label>
                 </div>
             </div>
 
             <div>
-                <h3 className='text-md mb-1'>Ваши физические данные 📏</h3>
+                <h3 className='text-md mb-1'>Ваши физические данные </h3>
                 <div className='flex flex-col gap-2'>
                     <input 
                         className="px-4 py-2 bg-zinc-900 rounded-md placeholder:text-zinc-700 ring-1 valid:ring-emerald-500 invalid:ring-rose-500 focus:ring-0"

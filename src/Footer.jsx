@@ -11,12 +11,12 @@ function Footer() {
             <div className='gap-y-5 flex flex-col'>
                 <p className='text-white/80 text-[20px] leading-[24px]'>Сервис</p>
                 <a onClick={() => navigate('/subscription-cancellation') & window.scrollTo(0, 0)} target='_blank' className='font-semibold text-[20px] leading-[24px] cursor-pointer'>Отменить подписку</a>
-                <a href={"docs/tariff.pdf"} className='font-semibold text-[20px] leading-[24px]'>Тарифы</a>
+                <a href={"assets/docs/tariff.pdf"} download className='font-semibold text-[20px] leading-[24px]'>Тарифы</a>
             </div>
             <div className='gap-y-5 flex flex-col'>
                 <p className='text-white/80 text-[20px] leading-[24px]'>Документы</p>
-                <a href={"docs/oferta.pdf"} className='font-semibold text-[20px] leading-[24px]'>Договор оферты</a>
-                <a href={"docs/policy.pdf"} className='font-semibold text-[20px] leading-[24px]'>Политика конфиденциальности</a>
+                <a href={"assets/docs/oferta.pdf"} download className='font-semibold text-[20px] leading-[24px]'>Договор оферты</a>
+                <a href={"assets/docs/policy.pdf"} download className='font-semibold text-[20px] leading-[24px]'>Политика конфиденциальности</a>
             </div>
             <div className='gap-y-5 flex flex-col'>
                 <p className='text-white/80 text-[20px] leading-[24px]'>ИП: Стаценко В.А.</p>
