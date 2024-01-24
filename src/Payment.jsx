@@ -6,6 +6,8 @@ function Payment(props) {
 
     let isFormCorrect = props.values.slice(8).every(el => el.validity)
 
+    let price = 1990
+
     const navigate = useNavigate()
   
     function sendData(e) {
@@ -73,7 +75,7 @@ function Payment(props) {
                 <div className="p-4 bg-zinc-900 rounded-b-xl">
                     <div className="flex justify-between items-end">
                         <p className="text-xl">Индивидуальный план питания</p>
-                        <p className="text-3xl font-bold before:content-['390₽'] before:text-lg before:font-normal before:text-emerald-500 before:line-through
+                        <p className="text-3xl font-bold before:content-['1990₽'] before:text-lg before:font-normal before:text-emerald-500 before:line-through
                         after:content-['*'] after:text-lg after:font-normal after:text-emerald-700 after:absolute"> 49₽</p>
                     </div>
                     <input 
@@ -87,6 +89,7 @@ function Payment(props) {
                         required>
                     </input>
 
+
                     <div className="flex flex-col gap-2 mt-4 text-zinc-600">
                         <label className={`cursor-pointer`}>
                             <input
@@ -94,7 +97,7 @@ function Payment(props) {
                                 value={0}
                                 checked={checked.first}
                                 onChange={(e) => setChecked(el => ({...el, first: !el.first}))}
-                            /> Соглашаюсь с условиями оферты рекуррентных платежей(Первые 3 дня 49 руб. Далее 390 рублей/неделя)
+                            /> Соглашаюсь с условиями оферты рекуррентных платежей(Первые 3 дня 49 руб. Далее {price} рублей/неделя)
                         </label>
                         <label className='cursor-pointer'>
                             <input
@@ -118,7 +121,7 @@ function Payment(props) {
                 </div>
             </div>
 
-            <p className="max-w-3xl w-full m-auto -mt-2 text-md text-zinc-400">* Скидка действует первые три дня. Далее – 390₽ / неделя</p>
+            <p className="max-w-3xl w-full m-auto -mt-2 text-md text-zinc-400">* Скидка действует первые три дня. Далее – {price}₽ / неделя</p>
 
             <img src='img.png' className="rounded-xl max-h-96 object-cover max-w-3xl w-full m-auto" />
             

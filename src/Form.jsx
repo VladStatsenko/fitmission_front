@@ -21,6 +21,8 @@ function Form(props) {
                     </label>
                 </div>
             </div>
+            <div>
+            </div>
 
             <div>
                 <h3 className='text-md mb-1'>Едите ли вы мясо? </h3>
@@ -33,7 +35,8 @@ function Form(props) {
                     </label>
                 </div>
             </div>
-
+            <div>
+            </div>
             <div>
                 <h3 className='text-md mb-1'>Ваше отношение к молочным продуктам </h3>
                 <div className='flex gap-2' onChange={props.handleChangeForm}>
@@ -45,7 +48,8 @@ function Form(props) {
                     </label>
                 </div>
             </div>
-
+            <div>
+            </div>
             <div>
                 <h3 className='text-md mb-1'>Выберите уровень Вашей активности </h3>
                 <div className='flex max-sm:flex-col gap-2' onChange={props.handleChangeForm}>
@@ -66,6 +70,8 @@ function Form(props) {
                     </label>
                 </div>
            </div>
+            <div>
+            </div>
            <div>
                 <h3 className='text-md mb-1'>На какой области вы хотите сосредоточиться в своем плане?</h3>
                 <div className='flex max-sm:flex-col gap-2' onChange={props.handleChangeForm}>
@@ -82,6 +88,8 @@ function Form(props) {
                           <input type='radio' value={4} name='goals' className="hidden" /> Другое
                     </label>
                 </div>
+            </div>
+            <div>
             </div>
                <div>
                 <h3 className='text-md mb-1'>Какова Ваша основная причина желания похудеть? (Выберите самое важное)</h3>
@@ -100,7 +108,8 @@ function Form(props) {
                     </label>
                 </div>
             </div>
-
+            <div>
+            </div>
             <div>
                 <h3 className='text-md mb-1'>Ваши физические данные </h3>
                 <div className='flex flex-col gap-2'>

@@ -35,14 +35,11 @@ function CancelSubscription(props) {
                 placeholder='Ваша  эл. почта'
                 required>
             </input>
-            {isFormCorrect
-                ? <button
+            <button
                     onClick={(e) => sendData(e)}
                     className='bg-zinc-900 max-w-3xl m-auto px-4 py-2 w-full rounded-md sm:max-2xl:ring-1 sm:max-2xl:ring-emerald-500 sm:max-2xl:hover:ring-2 sm:max-2xl:hover:ring-emerald-500 max-sm:bg-emerald-500'
                     >Отменить подписку
                 </button>
-                : <button onClick={() => alert('Укажите ваш e-mail')} className='max-w-3xl m-auto bg-zinc-900 px-4 py-2 w-full rounded-md max-sm:bg-emerald-500 cursor-not-allowed max-sm:opacity-50'>Отменить подписку</button>
-            }         
         </>
     )
 }
